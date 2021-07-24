@@ -1,6 +1,5 @@
 <?php
 /**
- *
  * @copyright   (C) 2021 Rishabh Ranjan Jha
  * @license     GNU General Public License version 2 or later; see LICENSE.txt
  */
@@ -13,6 +12,7 @@ use Joomla\CMS\Factory;
 /**
  * Article Progressbar Plugin.
  *
+ * @since	1.0.0
  */
 class PlgSystemRPArticleProgressbar extends CMSPlugin
 {
@@ -20,14 +20,21 @@ class PlgSystemRPArticleProgressbar extends CMSPlugin
 	 * Application object.
 	 *
 	 * @var    CMSApplicationInterface
+	 * @since  1.0.0
 	 */
 	protected $app;
 
+	/**
+	 * CSS for Site part
+	 *
+	 * @since	1.0.0
+	 */
 	public function site_css()
 	{
-		$css = '#rpfixedtrack {display:none;position: fixed; ' . $this->params->get('site_position', 'top') . ': ' . $this->params->get('site_offset', 0) . '; border-radius:' . $this->params->get('site_bradius', '100px') . ';z-index: 10000;background-color: ' . $this->params->get('site_bcolor', '#d9d9d9') . ';';
+		$params = $this->params;
+		$css = '#rpfixedtrack {display:none;position: fixed; ' . $params->get('site_position', 'top') . ': ' . $params->get('site_offset', 0) . '; border-radius:' . $params->get('site_bradius', '100px') . ';z-index: 10000;background-color: ' . $params->get('site_bcolor', '#c7c7c7') . ';';
 
-		if ($this->params->get('site_position', 'top') === "top" || $this->params->get('site_position') === "bottom")
+		if ($params->get('site_position', 'top') === "top" || $arams->get('site_position') === "bottom")
 		{
 			$css .= 'width: 100%;}';
 		}
@@ -36,22 +43,28 @@ class PlgSystemRPArticleProgressbar extends CMSPlugin
 			$css .= 'height: 100%;}';
 		}
 
-		$css .= '#rpbar {border-radius:' . $this->params->get('site_bradius', '100px') . ';background: ' . $this->params->get('site_pcolor', '#000') . ';';
+		$css .= '#rpbar {border-radius:' . $params->get('site_bradius', '100px') . ';background: ' . $params->get('site_pcolor', '#5abfdd') . ';';
 
-		if ($this->params->get('site_position', 'top') === "top" || $this->params->get('site_position') === "bottom")
+		if ($params->get('site_position', 'top') === "top" || $params->get('site_position') === "bottom")
 		{
-			$css .= 'height: ' . $this->params->get('site_height', '8px') . ';;width: 0%;}';
+			$css .= 'height: ' . $params->get('site_height', '8px') . ';;width: 0%;}';
 		}
 		else
 		{
-			$css .= 'width: ' . $this->params->get('site_width', '8px') . ';height: 0%;}';
+			$css .= 'width: ' . $params->get('site_width', '8px') . ';height: 0%;}';
 		}
 
 		return $css;
 	}
 
+	/**
+	 * Javascript for Site part
+	 *
+	 * @since	1.0.0
+	 */
 	public function site_js()
 	{
+		$params = $this->params;
 		$script = '
 		<script>
 			window.onscroll = function(){
@@ -62,7 +75,7 @@ class PlgSystemRPArticleProgressbar extends CMSPlugin
 				{
 					document.getElementById("rpfixedtrack").style.display = "block";';
 
-		if ($this->params->get('site_position', 'top') === "top" || $this->params->get('site_position') === "bottom")
+		if ($params->get('site_position', 'top') === "top" || $params->get('site_position') === "bottom")
 		{
 			$script .= 'document.getElementById("rpbar").style.width = scrolled + "%";';
 		}
@@ -82,11 +95,17 @@ class PlgSystemRPArticleProgressbar extends CMSPlugin
 		return $script;
 	}
 
+	/**
+	 * CSS for Admin part
+	 *
+	 * @since	1.0.0
+	 */
 	public function admin_css()
 	{
-		$css = '#rpfixedtrack {display:none;position: fixed; ' . $this->params->get('admin_position', 'top') . ': ' . $this->params->get('admin_offset', 0) . '; border-radius:' . $this->params->get('admin_bradius', '100px') . ';z-index: 10000;background-color: ' . $this->params->get('admin_bcolor', '#d9d9d9') . ';';
+		$params = $this->params;
+		$css = '#rpfixedtrack {display:none;position: fixed; ' . $params->get('admin_position', 'top') . ': ' . $params->get('admin_offset', 0) . '; border-radius:' . $params->get('admin_bradius', '100px') . ';z-index: 10000;background-color: ' . $params->get('admin_bcolor', '#c7c7c7') . ';';
 
-		if ($this->params->get('admin_position', 'top') === "top" || $this->params->get('admin_position') === "bottom")
+		if ($params->get('admin_position', 'top') === "top" || $params->get('admin_position') === "bottom")
 		{
 			$css .= 'width: 100%;}';
 		}
@@ -95,22 +114,28 @@ class PlgSystemRPArticleProgressbar extends CMSPlugin
 			$css .= 'height: 100%;}';
 		}
 
-		$css .= '#rpbar {border-radius:' . $this->params->get('admin_bradius', '100px') . ';background: ' . $this->params->get('admin_pcolor', '#000') . ';';
+		$css .= '#rpbar {border-radius:' . $params->get('admin_bradius', '100px') . ';background: ' . $params->get('admin_pcolor', '#5abfdd') . ';';
 
-		if ($this->params->get('admin_position', 'top') === "top" || $this->params->get('admin_position') === "bottom")
+		if ($params->get('admin_position', 'top') === "top" || $params->get('admin_position') === "bottom")
 		{
-			$css .= 'height: ' . $this->params->get('admin_height', '8px') . ';;width: 0%;}';
+			$css .= 'height: ' . $params->get('admin_height', '8px') . ';;width: 0%;}';
 		}
 		else
 		{
-			$css .= 'width: ' . $this->params->get('admin_width', '8px') . ';height: 0%;}';
+			$css .= 'width: ' . $params->get('admin_width', '8px') . ';height: 0%;}';
 		}
 
 		return $css;
 	}
 
+	/**
+	 * Javascript for Admin part
+	 *
+	 * @since	1.0.0
+	 */
 	public function admin_js()
 	{
+		$params = $this->params;
 		$script = '
 		<script>
 			window.onscroll = function(){
@@ -121,7 +146,7 @@ class PlgSystemRPArticleProgressbar extends CMSPlugin
 				{
 					document.getElementById("rpfixedtrack").style.display = "block";';
 
-		if ($this->params->get('admin_position', 'top') === "top" || $this->params->get('admin_position') === "bottom")
+		if ($params->get('admin_position', 'top') === "top" || $params->get('admin_position') === "bottom")
 		{
 					$script .= 'document.getElementById("rpbar").style.width = scrolled + "%";';
 		}
@@ -141,38 +166,56 @@ class PlgSystemRPArticleProgressbar extends CMSPlugin
 		return $script;
 	}
 
+	/**
+	 * Add the styles to the page
+	 *
+	 * @return  void
+	 *
+	 * @since   1.0.0
+	 */
 	public function onBeforeCompileHead()
 	{
+		$app = $this->app;
+		$params = $this->params;
 		$doc = Factory::getDocument();
 
 		$site_css = $this->site_css();
 		$admin_css = $this->admin_css();
 
-		if ($this->app->isClient('site') && $this->params->get('site', 1) === 1)
+		if ($app->isClient('site') && $params->get('site', 1) === 1)
 		{
 			$doc->addStyleDeclaration($site_css);
 		}
 
-		if (!$this->app->isClient('site') && $this->params->get('admin', 0) === 1)
+		if (!$app->isClient('site') && $params->get('admin', 0) === 1)
 		{
 			$doc->addStyleDeclaration($admin_css);
 		}
 	}
 
+	/**
+	 * Add the HTML and Javascript to the page
+	 *
+	 * @return  void
+	 *
+	 * @since   1.0.0
+	 */
 	public function onAfterRespond()
 	{
-			$doc = Factory::getDocument();
+		$app = $this->app;
+		$params = $this->params;
+		$doc = Factory::getDocument();
 
-			$site_js = $this->site_js();
-			$admin_js = $this->admin_js();
+		$site_js = $this->site_js();
+		$admin_js = $this->admin_js();
 
-		if ($this->app->isClient('site') && $this->params->get('site', 1) === 1)
+		if ($app->isClient('site') && $params->get('site', 1) === 1)
 		{
 			echo '<div id="rpfixedtrack"><div id="rpbar"></div></div>';
 			echo $site_js;
 		}
 
-		if (!$this->app->isClient('site') && $this->params->get('admin', 0) === 1)
+		if (!$app->isClient('site') && $params->get('admin', 0) === 1)
 		{
 			echo '<div id="rpfixedtrack"><div id="rpbar"></div></div>';
 			echo $admin_js;

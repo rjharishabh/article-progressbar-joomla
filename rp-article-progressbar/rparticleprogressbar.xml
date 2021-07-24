@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<extension type="plugin" version="1.0" method="upgrade" group="system">
+<extension type="plugin" method="upgrade" group="system">
     <name>plg_system_article_progressbar</name>
     <author>Rishabh Ranjan Jha</author>
     <creationDate>July 2021</creationDate>
@@ -26,14 +26,14 @@
                     name="site_part"
                     type="note"
                     class="alert alert-info"
-                    label="Article Progressbar - Site part"
+                    label="PLG_SYSTEM_ARTICLE_PROGRESSBAR_SITE_PART"
                 />
 
                 <field
                     name="site"
                     type="radio"
                     class="btn-group btn-group-yesno"
-                    label="Article Progressbar on Site part"
+                    label="PLG_SYSTEM_ARTICLE_PROGRESSBAR_ON_SITE_PART"
                     default="1"
                     filter="integer"
                     >
@@ -44,19 +44,20 @@
                 <field
                     name="site_position"
                     type="list"
-                    label="Position"
+                    label="PLG_SYSTEM_ARTICLE_PROGRESSBAR_POSITION"
+                    default="top"
                     showon="site:1"
                     >
-                    <option value="top">Top</option>
-                    <option value="bottom">Bottom</option>
-                    <option value="left">Left</option>
-                    <option value="right">Right</option>
+                    <option value="top">PLG_SYSTEM_ARTICLE_PROGRESSBAR_POSITION_TOP</option>
+                    <option value="bottom">PLG_SYSTEM_ARTICLE_PROGRESSBAR_POSITION_BOTTOM</option>
+                    <option value="left">PLG_SYSTEM_ARTICLE_PROGRESSBAR_POSITION_LEFT</option>
+                    <option value="right">PLG_SYSTEM_ARTICLE_PROGRESSBAR_POSITION_RIGHT</option>
                 </field>
 
                 <field
                     name="site_offset"
                     type="text"
-                    label="Offset from the edge"
+                    label="PLG_SYSTEM_ARTICLE_PROGRESSBAR_OFFSET"
                     default="0"
                     showon="site:1"
                 />
@@ -64,21 +65,23 @@
                 <field
                     name="site_bcolor"
                     type="color"
-                    label="Background Color"
+                    label="PLG_SYSTEM_ARTICLE_PROGRESSBAR_BACKGROUND_COLOR"
+                    default="#c7c7c7"
                     showon="site:1"
                 />
 
                 <field
                     name="site_pcolor"
                     type="color"
-                    label="Progressbar Color"
+                    label="PLG_SYSTEM_ARTICLE_PROGRESSBAR_PROGRESSBAR_COLOR"
+                    default="#5abfdd"
                     showon="site:1"
                 />
 
                 <field
                     name="site_width"
                     type="text"
-                    label="Width"
+                    label="PLG_SYSTEM_ARTICLE_PROGRESSBAR_WIDTH"
                     default="8px"
                     showon="site_position:left,right[AND]site:1"
                 />
@@ -86,7 +89,7 @@
                 <field
                     name="site_height"
                     type="text"
-                    label="Height"
+                    label="PLG_SYSTEM_ARTICLE_PROGRESSBAR_HEIGHT"
                     default="8px"
                     showon="site_position:top,bottom[AND]site:1"
                 />
@@ -94,7 +97,7 @@
                 <field
                     name="site_bradius"
                     type="text"
-                    label="Border Radius"
+                    label="PLG_SYSTEM_ARTICLE_PROGRESSBAR_BORDER_RADIUS"
                     default="100px"
                     showon="site:1"
                 />
@@ -103,14 +106,14 @@
                     name="admin_part"
                     type="note"
                     class="alert alert-info"
-                    label="Article Progressbar - Site part"
+                    label="PLG_SYSTEM_ARTICLE_PROGRESSBAR_ADMIN_PART"
                 />
 
                 <field
                     name="admin"
                     type="radio"
                     class="btn-group btn-group-yesno"
-                    label="Article Progressbar on Site part"
+                    label="PLG_SYSTEM_ARTICLE_PROGRESSBAR_ON_ADMIN_PART"
                     default="0"
                     filter="integer"
                     >
@@ -121,19 +124,20 @@
                 <field
                     name="admin_position"
                     type="list"
-                    label="Position"
+                    label="PLG_SYSTEM_ARTICLE_PROGRESSBAR_POSITION"
+                    default="top"
                     showon="admin:1"
                     >
-                    <option value="top">Top</option>
-                    <option value="bottom">Bottom</option>
-                    <option value="left">Left</option>
-                    <option value="right">Right</option>
+                    <option value="top">PLG_SYSTEM_ARTICLE_PROGRESSBAR_POSITION_TOP</option>
+                    <option value="bottom">PLG_SYSTEM_ARTICLE_PROGRESSBAR_POSITION_BOTTOM</option>
+                    <option value="left">PLG_SYSTEM_ARTICLE_PROGRESSBAR_POSITION_LEFT</option>
+                    <option value="right">PLG_SYSTEM_ARTICLE_PROGRESSBAR_POSITION_RIGHT</option>
                 </field>
 
                 <field
                     name="admin_offset"
                     type="text"
-                    label="Offset from the edge"
+                    label="PLG_SYSTEM_ARTICLE_PROGRESSBAR_OFFSET"
                     default="0"
                     showon="admin:1"
                 />
@@ -141,21 +145,23 @@
                 <field
                     name="admin_bcolor"
                     type="color"
-                    label="Background Color"
+                    label="PLG_SYSTEM_ARTICLE_PROGRESSBAR_BACKGROUND_COLOR"
+                    default="#c7c7c7"
                     showon="admin:1"
                 />
 
                 <field
                     name="admin_pcolor"
                     type="color"
-                    label="Progressbar Color"
+                    label="PLG_SYSTEM_ARTICLE_PROGRESSBAR_PROGRESSBAR_COLOR"
+                    default="#5abfdd"
                     showon="admin:1"
                 />
 
                 <field
                     name="admin_width"
                     type="text"
-                    label="Width"
+                    label="PLG_SYSTEM_ARTICLE_PROGRESSBAR_WIDTH"
                     default="8px"
                     showon="admin_position:left,right[AND]admin:1"
                 />
@@ -163,7 +169,7 @@
                 <field
                     name="admin_height"
                     type="text"
-                    label="Height"
+                    label="PLG_SYSTEM_ARTICLE_PROGRESSBAR_HEIGHT"
                     default="8px"
                     showon="admin_position:top,bottom[AND]admin:1"
                 />
@@ -171,7 +177,7 @@
                 <field
                     name="admin_bradius"
                     type="text"
-                    label="Border Radius"
+                    label="PLG_SYSTEM_ARTICLE_PROGRESSBAR_BORDER_RADIUS"
                     default="100px"
                     showon="admin:1"
                 />
@@ -179,4 +185,9 @@
             </fieldset>
         </fields>
     </config>
+
+    <updateservers>
+        <server type="extension" priority="1" name="RP Article Progressbar Updates">https://raw.githubusercontent.com/rpextensions/article-progressbar-joomla/master/update.xml</server>
+    </updateservers>
+
 </extension>

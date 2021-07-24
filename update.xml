@@ -1,0 +1,33 @@
+<updates>
+	<update>
+		<name>System - RP Article Progressbar</name>
+		<description>This plugin helps you show a article progressbar on the site.</description>
+		<element>rparticleprogressbar</element>
+		<type>plugin</type>
+		<folder>system</folder>
+		<client>0</client>
+		<version>1.0.0</version>
+		<downloads>
+			<downloadurl type="full" format="zip">https://github.com/rpextensions/article-progressbar-joomla/raw/master/rp-article-progressbar_v1.0.0.zip</downloadurl>
+		</downloads>
+		<tags>stable</stable>
+		<maintainer>Rishabh Ranjan Jha</maintainer>
+		<targetplatform name="joomla" version="3.[789]|10" />
+	</update>
+
+	<update>
+		<name>System - RP Custom Scrollbar</name>
+		<description>This plugin helps you show a article progressbar on the site.</description>
+		<element>rparticleprogressbar</element>
+		<type>plugin</type>
+		<folder>system</folder>
+		<client>0</client>
+		<version>1.0.0</version>
+		<downloads>
+			<downloadurl type="full" format="zip">https://github.com/rpextensions/article-progressbar-joomla/raw/master/rp-article-progressbar_v1.0.0.zip</downloadurl>
+		</downloads>
+		<tags>stable</stable>
+		<maintainer>Rishabh Ranjan Jha</maintainer>
+		<targetplatform name="joomla" version="4.[012]" />
+	</update>
+</updates>
