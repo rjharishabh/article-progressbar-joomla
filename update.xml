@@ -1,7 +1,7 @@
 <updates>
 	<update>
 		<name>System - RP Article Progressbar</name>
-		<description>This plugin helps you show a article progressbar on the site.</description>
+		<description>This plugin helps you show an article progressbar on the site.</description>
 		<element>rparticleprogressbar</element>
 		<type>plugin</type>
 		<folder>system</folder>
@@ -17,7 +17,7 @@
 
 	<update>
 		<name>System - RP Article Progressbar</name>
-		<description>This plugin helps you show a article progressbar on the site.</description>
+		<description>This plugin helps you show an article progressbar on the site.</description>
 		<element>rparticleprogressbar</element>
 		<type>plugin</type>
 		<folder>system</folder>
